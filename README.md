@@ -23,6 +23,7 @@ You will be prompted to re-open the project on a dev container.
 Once it re-opens, you will have the environment fully prepared with a migrated database, a Redis channel and the port 3000 waiting for the main server.
 
 ### Running the server
+#### Inside the dev container
 To start the server, run:
 ```bash
 bundle exec rails server
@@ -37,6 +38,13 @@ To execute the automated tests, run:
 ```bash
 bundle exec rspec
 ```
+
+#### Using docker compose
+You can also run the main server, database, redis channel and the tests outside of the dev container with:
+```bash
+docker compose up
+```
+The main server will be available on http://localhost:3000/
 
 ## Available Routes
 ### Products
@@ -95,5 +103,3 @@ bundle exec rspec
 
 ## Final considerations
 This project was developed as part of a recruitment process. There is no intent for this project to be open to the public, nor for it to have some real-world applications.
-
-- After the deadline, I implemented a full docker setup. It is on [this branch](https://github.com/John2509/tech-interview-backend-entry-level-main/tree/feat/full-docker)
