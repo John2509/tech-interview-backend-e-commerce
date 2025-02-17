@@ -13,7 +13,7 @@ class Cart < ApplicationRecord
   def update_total_price
     return unless id # Check if cart is on the database before doing the query
 
-    self.total_price = CartItem.where(cart_id: id).map(&:total_price).sum
+    self.total_price = CartItem.with_cart(self).map(&:total_price).sum
   end
 
   def add_cart_item!(product, quantity)

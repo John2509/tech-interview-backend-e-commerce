@@ -11,6 +11,7 @@ class CartItem < ApplicationRecord
   validates :quantity, numericality: { greater_than_or_equal_to: 1 }
 
   scope :with_product, ->(product) { where(product: product) }
+  scope :with_cart, ->(cart) { where(cart: cart) }
 
   after_destroy :update_cart
   after_save :update_cart
