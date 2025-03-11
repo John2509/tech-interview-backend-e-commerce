@@ -103,8 +103,5 @@ The main server will be available on http://localhost:3000/
 ### Session and spec\requests\carts_spec.rb
  From what I have researched, [session are not easily mockable in rails 7](https://stackoverflow.com/a/74640014). Therefore, the cart integration tests perform the whole path in the test. That is why there are a lot of POST /cart call, since that is the only route that sets the cart session.
 
-### Atomicity
- The routes calls are not atomic currently and with more time, I would change that.
-
 ## Final considerations
 This project was developed as part of a recruitment process. There is no intent for this project to be open to the public, nor for it to have some real-world applications.
